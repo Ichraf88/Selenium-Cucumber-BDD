@@ -1,5 +1,5 @@
 .settings
-/mvn/
+*.mvn
 /target/
 *.classpath
 *.project
