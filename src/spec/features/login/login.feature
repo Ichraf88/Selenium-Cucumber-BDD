@@ -9,4 +9,4 @@ When Je clique sur le bouton Log in
 And  Je saisis une adresse mail
 And Je saisis un mot de passe
 And Je clique sur le bouton Login
-Then Je me redirige vers la page home "ziedhannachi0@gmail.com"
+Then Je me redirige vers la page home "ichrafbenmohamed@gmail.com"
