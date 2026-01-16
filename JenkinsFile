@@ -2,19 +2,13 @@ pipeline {
   agent any
 
   tools {
-    jdk 'JDK17'        // mets le nom EXACT configuré dans Jenkins
-    maven 'Maven3'     // mets le nom EXACT configuré dans Jenkins
+    jdk   'JDK21'
+    maven 'Maven3'
   }
 
   options {
     timestamps()
     disableConcurrentBuilds()
-  }
-
-  environment {
-    // Utile si tes tests lisent ces variables
-    BROWSER = 'chrome'
-    HEADLESS = 'true'
   }
 
   stages {
@@ -24,23 +18,31 @@ pipeline {
       }
     }
 
-    stage('Build & Tests') {
+    stage('Build & Test') {
       steps {
         bat 'java -version'
         bat 'mvn -version'
-        bat 'mvn -U -e -DskipTests=false clean test'
-        // si tu passes des params :
-        // bat 'mvn clean test -Dbrowser=chrome -Dheadless=true'
+        bat 'mvn -U -e clean test'
       }
     }
   }
 
   post {
     always {
-      // Rapports JUnit/TestNG (Surefire)
+      // Résultats JUnit (Surefire)
       junit testResults: 'target/surefire-reports/*.xml', allowEmptyResults: true
 
-      // Archive artefacts (screenshots/logs/rapports) — adapte selon ton projet
+      // Rapport Cucumber HTML (si généré)
+      publishHTML(target: [
+        reportDir: 'target/cucumber-report',
+        reportFiles: 'cucumber.html',
+        reportName: 'Cucumber Report',
+        keepAll: true,
+        alwaysLinkToLastBuild: true,
+        allowMissing: true
+      ])
+
+      // Archive (rapports + screenshots/logs si tu en génères)
       archiveArtifacts artifacts: 'target/**, screenshots/**, logs/**', allowEmptyArchive: true
     }
   }
