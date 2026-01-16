@@ -1,0 +1,47 @@
+pipeline {
+  agent any
+
+  tools {
+    jdk 'JDK17'        // mets le nom EXACT configuré dans Jenkins
+    maven 'Maven3'     // mets le nom EXACT configuré dans Jenkins
+  }
+
+  options {
+    timestamps()
+    disableConcurrentBuilds()
+  }
+
+  environment {
+    // Utile si tes tests lisent ces variables
+    BROWSER = 'chrome'
+    HEADLESS = 'true'
+  }
+
+  stages {
+    stage('Checkout') {
+      steps {
+        checkout scm
+      }
+    }
+
+    stage('Build & Tests') {
+      steps {
+        bat 'java -version'
+        bat 'mvn -version'
+        bat 'mvn -U -e -DskipTests=false clean test'
+        // si tu passes des params :
+        // bat 'mvn clean test -Dbrowser=chrome -Dheadless=true'
+      }
+    }
+  }
+
+  post {
+    always {
+      // Rapports JUnit/TestNG (Surefire)
+      junit testResults: 'target/surefire-reports/*.xml', allowEmptyResults: true
+
+      // Archive artefacts (screenshots/logs/rapports) — adapte selon ton projet
+      archiveArtifacts artifacts: 'target/**, screenshots/**, logs/**', allowEmptyArchive: true
+    }
+  }
+}
