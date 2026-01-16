@@ -34,12 +34,12 @@ pipeline {
 
       // Rapport Cucumber HTML (si généré)
       publishHTML(target: [
-        reportDir: 'target/report/cucumber-report.html',
-        reportFiles: 'cucumber-report.html',
-        reportName: 'Cucumber Report',
-        keepAll: true,
-        alwaysLinkToLastBuild: true,
-        allowMissing: true
+         reportDir: 'target/report',
+         reportFiles: 'cucumber-report.html',
+         reportName: 'Cucumber Report',
+         keepAll: true,
+         alwaysLinkToLastBuild: true,
+         allowMissing: false
       ])
 
       // Archive (rapports + screenshots/logs si tu en génères)
