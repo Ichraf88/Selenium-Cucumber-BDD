@@ -34,8 +34,8 @@ pipeline {
 
       // Rapport Cucumber HTML (si généré)
       publishHTML(target: [
-        reportDir: 'target/cucumber-report',
-        reportFiles: 'cucumber.html',
+        reportDir: 'target/report/cucumber-report.html',
+        reportFiles: 'cucumber-report.html',
         reportName: 'Cucumber Report',
         keepAll: true,
         alwaysLinkToLastBuild: true,
