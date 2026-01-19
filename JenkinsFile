@@ -2,48 +2,121 @@ pipeline {
   agent any
 
   tools {
-    jdk   'JAVA_HOME'
-    maven 'MAVEN_HOME'
+    jdk   'JAVA_HOME'     // ex: 'JDK21'
+    maven 'MAVEN_HOME'    // ex: 'Maven3'
   }
 
   options {
     timestamps()
     disableConcurrentBuilds()
+    timeout(time: 45, unit: 'MINUTES')
+    buildDiscarder(logRotator(numToKeepStr: '30', artifactNumToKeepStr: '15'))
+    skipDefaultCheckout(true)
+  }
+
+  parameters {
+    choice(name: 'BROWSER', choices: ['chrome', 'edge'], description: 'Navigateur Selenium')
+    booleanParam(name: 'HEADLESS', defaultValue: true, description: 'Headless (recommandé sur Jenkins)')
+    string(name: 'CUCUMBER_TAGS', defaultValue: '', description: 'Ex: @smoke and not @wip (vide = tous)')
+    booleanParam(name: 'RUN_E2E', defaultValue: true, description: 'Exécuter les scénarios Cucumber/Selenium')
+  }
+
+  environment {
+    MVN = 'mvn -B -ntp -U -e'  // -B batch, -ntp no transfer progress
   }
 
   stages {
+
+    stage('Init') {
+      steps {
+        bat 'java -version'
+        bat 'mvn -version'
+        echo "BROWSER=${params.BROWSER} | HEADLESS=${params.HEADLESS} | TAGS='${params.CUCUMBER_TAGS}' | RUN_E2E=${params.RUN_E2E}"
+      }
+    }
+
     stage('Checkout') {
       steps {
         checkout scm
       }
     }
 
-    stage('Build & Test') {
+    stage('Build (compile/package)') {
       steps {
-        bat 'java -version'
-        bat 'mvn -version'
-        bat 'mvn -U -e clean test'
+        // build sans tests = rapide + détecte erreurs de compilation tôt
+        bat "%MVN% -DskipTests clean package"
+      }
+    }
+
+    stage('Unit Tests (si tu en as)') {
+      steps {
+        // Si tu as des tests unitaires séparés : garde ce stage.
+        // Sinon tu peux le supprimer.
+        catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
+          bat "%MVN% test"
+        }
+      }
+    }
+
+    stage('E2E Tests (Cucumber/Selenium)') {
+      when { expression { return params.RUN_E2E } }
+      steps {
+        // catchError pour continuer et publier les rapports même si des scénarios échouent
+        catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
+          bat """
+            %MVN% test ^
+              -Dbrowser=${params.BROWSER} ^
+              -Dheadless=${params.HEADLESS} ^
+              -Dcucumber.filter.tags="${params.CUCUMBER_TAGS}"
+          """
+        }
+      }
+    }
+
+    stage('Publish Reports') {
+      steps {
+        // JUnit (Surefire + Failsafe si tu ajoutes IT plus tard)
+        junit testResults: 'target/surefire-reports/*.xml, target/failsafe-reports/*.xml',
+              allowEmptyResults: true
+
+        // Cucumber HTML (sans casser le build si absent)
+        script {
+          def reportFile = 'target/report/cucumber-report.html'
+          if (fileExists(reportFile)) {
+            publishHTML(target: [
+              reportDir: 'target/report',
+              reportFiles: 'cucumber-report.html',
+              reportName: 'Cucumber Report',
+              keepAll: true,
+              alwaysLinkToLastBuild: true,
+              allowMissing: false
+            ])
+          } else {
+            echo "Rapport Cucumber introuvable: ${reportFile}"
+          }
+        }
+      }
+    }
+
+    stage('Archive Artifacts') {
+      steps {
+        archiveArtifacts artifacts: 'target/report/**, target/screenshots/**, screenshots/**, logs/**',
+                         allowEmptyArchive: true
+      }
+    }
+
+    stage('Cleanup') {
+      steps {
+        // Nettoyage workspace (safe)
+        // deleteDir() supprime le workspace du job
+        deleteDir()
       }
     }
   }
 
   post {
     always {
-      // Résultats JUnit (Surefire)
-      junit testResults: 'target/surefire-reports/*.xml', allowEmptyResults: true
-
-      // Rapport Cucumber HTML (si généré)
-      publishHTML(target: [
-         reportDir: 'target/report',
-         reportFiles: 'cucumber-report.html',
-         reportName: 'Cucumber Report',
-         keepAll: true,
-         alwaysLinkToLastBuild: true,
-         allowMissing: false
-      ])
-
-      // Archive (rapports + screenshots/logs si tu en génères)
-      archiveArtifacts artifacts: 'target/**, screenshots/**, logs/**', allowEmptyArchive: true
+      echo "Build terminé: ${currentBuild.currentResult}"
     }
   }
 }
