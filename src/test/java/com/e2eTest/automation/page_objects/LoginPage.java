@@ -26,6 +26,8 @@ public class LoginPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//a[normalize-space()='ichrafbenmohamed@gmail.com']")
 	private static WebElement homePage;
 	
+	@FindBy(how = How.CSS, using = "div[class='validation-summary-errors'] span")
+	private static WebElement rejetMessage;
 	
 	public LoginPage() {
 		super(Setup.getDriver());
@@ -51,6 +53,9 @@ public class LoginPage extends BasePage {
 		return homePage;
 	}
 	
+	public static WebElement getrejetMessage() {
+		return rejetMessage;
+	}
 
 	
 

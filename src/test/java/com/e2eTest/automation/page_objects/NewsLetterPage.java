@@ -23,6 +23,9 @@ public class NewsLetterPage extends BasePage {
 	
 	@FindBy(how = How.ID , using = "newsletter-result-block")
 	private static WebElement subsribeResult ;
+	
+	@FindBy(how = How.ID, using = "newsletter-result-block")
+	private static WebElement errorMessage;
 
 	public NewsLetterPage() {
 		super(Setup.getDriver());
@@ -38,6 +41,11 @@ public class NewsLetterPage extends BasePage {
 	
 	public static WebElement getSubsribeResult() {
 		return subsribeResult;
+	}
+	
+	
+	public static WebElement geterrorMessage() {
+		return errorMessage;
 	}
 	
 }

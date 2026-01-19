@@ -23,7 +23,7 @@ public class TearDown {
 			scenario.attach(screenshot, "image/png", scenario.getName());
 		}
 
-		Setup.getDriver().quit();
+		//Setup.getDriver().quit();
 		Setup.getLogger().info("Scenario: " + scenario.getName() + " - Finished " + scenario.getStatus());
 
 	}

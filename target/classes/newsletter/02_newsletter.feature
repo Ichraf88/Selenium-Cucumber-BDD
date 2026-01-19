@@ -1,10 +1,20 @@
 #langage: EN
-@newsletter
+@newsletter @tr
 Feature: Je Souhaite Tester la souscription aux newsletter
 
-Scenario: Je Souhaite Tester la souscription avec un email valide 
+Background:
+Given Je me connecte sur le site Web Demo Shop
 
-Given J'accede au site Web Demo Shop
+@newsletter_validMail
+Scenario: Je Souhaite Tester la souscription aux newsletter
+
 When Je saisis une adresse mail valide
 And  clique sur Subscribe
-Then le message suivant doit apparaitre "Thank you for signing up! A verification email has been sent. We appreciate your interest."
+Then le message suivant doit apparaitre Message "Thank you for signing up! A verification email has been sent. We appreciate your interest."
+
+@newsletter_InvalidMail
+Scenario: Je Souhaite Tester la souscription aux newsletter
+
+When Je saisis une adresse mail invalide mail "ichraf.com"
+And  clique sur Subscribe
+Then le message suivant doit apparaitre Message1 "Enter valid email"

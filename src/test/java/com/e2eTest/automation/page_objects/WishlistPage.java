@@ -16,7 +16,7 @@ public class WishlistPage extends BasePage {
 	@FindBy(how = How.CSS, using = "div[class='page-title'] h1")
     private static WebElement wishlist;
 
-	@FindBy(how = How.ID , using = "newsletter-result-block")
+	@FindBy(how = How.CSS , using = ".wishlist-content")
 	private static WebElement wishlistVideResult ;
 	
 	public WishlistPage() {

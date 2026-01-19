@@ -5,43 +5,51 @@ import com.e2eTest.automation.utils.ActionsUtils;
 import com.e2eTest.automation.utils.ConfigFileReader;
 import com.e2eTest.automation.utils.Setup;
 import com.e2eTest.automation.utils.Validations;
+import com.e2eTest.automation.utils.WaitUtils;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class NewsLetterSteps {
-	
+
 	NewsLetterPage newsletter = new NewsLetterPage();
 	ConfigFileReader configFileReader = new ConfigFileReader();
 	ActionsUtils actionsUtils = new ActionsUtils();
 	Validations validations = new Validations();
-	
-	@Given("J'accede au site Web Demo Shop")
-	public void jAccedeAuSiteWebDemoShop() {
-		Setup.getDriver().get(configFileReader.getProperty("home.url"));
-	}
-	
-	
+	WaitUtils waitUtils = new WaitUtils(Setup.getDriver());
+
 	@When("Je saisis une adresse mail valide")
 	public void jeSaisisUneAdresseMailValide() {
 		actionsUtils.writeText(NewsLetterPage.getNewLetterPageField(), configFileReader.getProperty("home.email"));
 	}
-	
-	
+
 	@When("clique sur Subscribe")
-	public void cliqueSurSubscribe() {	
+	public void cliqueSurSubscribe() {
 		actionsUtils.click(NewsLetterPage.getSubsribeButton());
 	}
-	
-	
-	@Then("le message suivant doit apparaitre {string}")
-	public void leMessageSuivantDoitApparaitre(String result) throws InterruptedException {
-		Thread.sleep(3000); // a verifier avec Zied comment la faire
-		validations.assertEquals(NewsLetterPage.getSubsribeResult(), result);
-				
+
+	@Then("le message suivant doit apparaitre Message {string}")
+	public void leMessageSuivantDoitApparaitre(String Message) throws InterruptedException {
+		Thread.sleep(3000);
+		String rrrrrrrrrrrrrrrr = NewsLetterPage.getSubsribeResult().getText();
+		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA " + rrrrrrrrrrrrrrrr);
+		validations.assertEquals(NewsLetterPage.getSubsribeResult(), Message);
+
 	}
 
+	@When("Je saisis une adresse mail invalide mail {string}")
+	public void jeSaisisUneAdresseMailInvalideMail(String mail) {
+		actionsUtils.writeText(NewsLetterPage.getNewLetterPageField(), mail);
 
+	}
+
+	@Then("le message suivant doit apparaitre Message1 {string}")
+	public void leMessageSuivantDoitApparaitreMessage(String Message1) throws InterruptedException {
+		Thread.sleep(3000);
+		String xxxxx = NewsLetterPage.geterrorMessage().getText();
+		System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA " + xxxxx);
+		validations.assertEquals(NewsLetterPage.geterrorMessage(), Message1);
+
+	}
 
 }

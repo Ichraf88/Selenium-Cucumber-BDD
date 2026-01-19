@@ -13,5 +13,4 @@ And Je clique sur le bouton Login
 Scenario: Je Souhaite Tester La Page wishlists vide pour un utilisateur donné 
 
 And Je clique sur le bouton wishlist
-Then Je me redirige vers la page wishlist "The wishlist is empty!"
-And le message suivant doit apparaitre "The wishlist is empty!"
+Then le message suivant doit apparaitre Emty "The wishlist is empty!"
