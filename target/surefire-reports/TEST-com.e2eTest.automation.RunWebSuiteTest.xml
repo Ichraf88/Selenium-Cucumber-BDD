@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.e2eTest.automation.RunWebSuiteTest" time="15.518" tests="1" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="com.e2eTest.automation.RunWebSuiteTest" time="27.3" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -10,30 +10,30 @@
     <property name="user.variant" value=""/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="user.timezone" value="America/Toronto"/>
-    <property name="os.name" value="Windows 10"/>
+    <property name="os.name" value="Windows 11"/>
     <property name="java.vm.specification.version" value="21"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CA"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\babde\AppData\Local\Temp\surefire12208867389469226931\surefirebooter-20260114164722758_3.jar C:\Users\babde\AppData\Local\Temp\surefire12208867389469226931 2026-01-14T16-47-22_277-jvmRun1 surefire-20260114164722758_1tmp surefire_0-20260114164722758_2tmp"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin"/>
+    <property name="sun.java.command" value="C:\Users\babde\AppData\Local\Temp\surefire5812419860059802928\surefirebooter-20260202124300844_3.jar C:\Users\babde\AppData\Local\Temp\surefire5812419860059802928 2026-02-02T12-42-58_390-jvmRun1 surefire-20260202124300844_1tmp surefire_0-20260202124300844_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\babde\eclipse-workspace\Selenium_Cucumber\target\test-classes;C:\Users\babde\eclipse-workspace\Selenium_Cucumber\target\classes;C:\Users\babde\.m2\repository\org\testng\testng\7.9.0\testng-7.9.0.jar;C:\Users\babde\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\babde\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\babde\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\babde\.m2\repository\org\apache\poi\poi-ooxml\3.13\poi-ooxml-3.13.jar;C:\Users\babde\.m2\repository\org\apache\poi\poi\3.13\poi-3.13.jar;C:\Users\babde\.m2\repository\commons-codec\commons-codec\1.9\commons-codec-1.9.jar;C:\Users\babde\.m2\repository\org\apache\poi\poi-ooxml-schemas\3.13\poi-ooxml-schemas-3.13.jar;C:\Users\babde\.m2\repository\org\apache\xmlbeans\xmlbeans\2.6.0\xmlbeans-2.6.0.jar;C:\Users\babde\.m2\repository\stax\stax-api\1.0.1\stax-api-1.0.1.jar;C:\Users\babde\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\babde\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\babde\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\babde\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\babde\.m2\repository\org\seleniumhq\selenium\selenium-java\4.39.0\selenium-java-4.39.0.jar;C:\Users\babde\.m2\repository\org\seleniumhq\selenium\selenium-api\4.39.0\selenium-api-4.39.0.jar;C:\Users\babde\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\babde\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.39.0\selenium-chrome-driver-4.39.0.jar;C:\Users\babde\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\babde\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.39.0\selenium-chromium-driver-4.39.0.jar;C:\Users\babde\.m2\repository\org\seleniumhq\selenium\selenium-json\4.39.0\selenium-json-4.39.0.jar;C:\Users\babde\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.39.0\selenium-manager-4.39.0.jar;C:\Users\babde\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v141\4.39.0\selenium-devtools-v141-4.39.0.jar;C:\Users\babde\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v142\4.39.0\selenium-devtools-v142-4.39.0.jar;C:\Users\babde\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v143\4.39.0\selenium-devtools-v143-4.39.0.jar;C:\Users\babde\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.39.0\selenium-edge-driver-4.39.0.jar;C:\Users\babde\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.39.0\selenium-firefox-driver-4.39.0.jar;C:\Users\babde\.m2\repository\org\seleniumhq\selenium\selenium-http\4.39.0\selenium-http-4.39.0.jar;C:\Users\babde\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.39.0\selenium-ie-driver-4.39.0.jar;C:\Users\babde\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.39.0\selenium-remote-driver-4.39.0.jar;C:\Users\babde\.m2\repository\com\google\guava\guava\33.5.0-jre\guava-33.5.0-jre.jar;C:\Users\babde\.m2\repository\com\google\guava\failureaccess\1.0.3\failureaccess-1.0.3.jar;C:\Users\babde\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\babde\.m2\repository\com\google\errorprone\error_prone_annotations\2.41.0\error_prone_annotations-2.41.0.jar;C:\Users\babde\.m2\repository\com\google\j2objc\j2objc-annotations\3.1\j2objc-annotations-3.1.jar;C:\Users\babde\.m2\repository\io\opentelemetry\opentelemetry-api\1.56.0\opentelemetry-api-1.56.0.jar;C:\Users\babde\.m2\repository\io\opentelemetry\opentelemetry-context\1.56.0\opentelemetry-context-1.56.0.jar;C:\Users\babde\.m2\repository\io\opentelemetry\opentelemetry-common\1.56.0\opentelemetry-common-1.56.0.jar;C:\Users\babde\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.56.0\opentelemetry-exporter-logging-1.56.0.jar;C:\Users\babde\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.56.0\opentelemetry-sdk-common-1.56.0.jar;C:\Users\babde\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.56.0\opentelemetry-sdk-extension-autoconfigure-spi-1.56.0.jar;C:\Users\babde\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.56.0\opentelemetry-sdk-extension-autoconfigure-1.56.0.jar;C:\Users\babde\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.56.0\opentelemetry-sdk-trace-1.56.0.jar;C:\Users\babde\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.56.0\opentelemetry-sdk-1.56.0.jar;C:\Users\babde\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.56.0\opentelemetry-sdk-metrics-1.56.0.jar;C:\Users\babde\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.56.0\opentelemetry-sdk-logs-1.56.0.jar;C:\Users\babde\.m2\repository\net\bytebuddy\byte-buddy\1.18.2\byte-buddy-1.18.2.jar;C:\Users\babde\.m2\repository\org\seleniumhq\selenium\selenium-os\4.39.0\selenium-os-4.39.0.jar;C:\Users\babde\.m2\repository\org\apache\commons\commons-exec\1.6.0\commons-exec-1.6.0.jar;C:\Users\babde\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.39.0\selenium-safari-driver-4.39.0.jar;C:\Users\babde\.m2\repository\org\seleniumhq\selenium\selenium-support\4.39.0\selenium-support-4.39.0.jar;C:\Users\babde\.m2\repository\org\apache\logging\log4j\log4j-core\2.17.2\log4j-core-2.17.2.jar;C:\Users\babde\.m2\repository\com\googlecode\json-simple\json-simple\1.1.1\json-simple-1.1.1.jar;C:\Users\babde\.m2\repository\org\apache\logging\log4j\log4j-api\2.17.2\log4j-api-2.17.2.jar;C:\Users\babde\.m2\repository\io\cucumber\cucumber-java\7.23.0\cucumber-java-7.23.0.jar;C:\Users\babde\.m2\repository\io\cucumber\cucumber-core\7.23.0\cucumber-core-7.23.0.jar;C:\Users\babde\.m2\repository\io\cucumber\cucumber-gherkin\7.23.0\cucumber-gherkin-7.23.0.jar;C:\Users\babde\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.23.0\cucumber-gherkin-messages-7.23.0.jar;C:\Users\babde\.m2\repository\io\cucumber\gherkin\32.1.1\gherkin-32.1.1.jar;C:\Users\babde\.m2\repository\io\cucumber\messages\27.2.0\messages-27.2.0.jar;C:\Users\babde\.m2\repository\io\cucumber\testng-xml-formatter\0.3.1\testng-xml-formatter-0.3.1.jar;C:\Users\babde\.m2\repository\io\cucumber\query\13.6.0\query-13.6.0.jar;C:\Users\babde\.m2\repository\io\cucumber\tag-expressions\6.1.2\tag-expressions-6.1.2.jar;C:\Users\babde\.m2\repository\io\cucumber\cucumber-expressions\18.0.1\cucumber-expressions-18.0.1.jar;C:\Users\babde\.m2\repository\io\cucumber\datatable\7.23.0\datatable-7.23.0.jar;C:\Users\babde\.m2\repository\io\cucumber\cucumber-plugin\7.23.0\cucumber-plugin-7.23.0.jar;C:\Users\babde\.m2\repository\io\cucumber\docstring\7.23.0\docstring-7.23.0.jar;C:\Users\babde\.m2\repository\io\cucumber\html-formatter\21.10.1\html-formatter-21.10.1.jar;C:\Users\babde\.m2\repository\io\cucumber\junit-xml-formatter\0.7.1\junit-xml-formatter-0.7.1.jar;C:\Users\babde\.m2\repository\io\cucumber\ci-environment\10.0.1\ci-environment-10.0.1.jar;C:\Users\babde\.m2\repository\io\cucumber\cucumber-junit\7.23.0\cucumber-junit-7.23.0.jar;C:\Users\babde\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\babde\.m2\repository\commons-io\commons-io\2.11.0\commons-io-2.11.0.jar;C:\Users\babde\.m2\repository\org\apache\pdfbox\pdfbox\1.8.1\pdfbox-1.8.1.jar;C:\Users\babde\.m2\repository\org\apache\pdfbox\fontbox\1.8.1\fontbox-1.8.1.jar;C:\Users\babde\.m2\repository\org\apache\pdfbox\jempbox\1.8.1\jempbox-1.8.1.jar;C:\Users\babde\.m2\repository\commons-logging\commons-logging\1.1.1\commons-logging-1.1.1.jar;C:\Users\babde\.m2\repository\com\github\stephenc\monte\monte-screen-recorder\0.7.7.0\monte-screen-recorder-0.7.7.0.jar;C:\Users\babde\.m2\repository\org\apache\commons\commons-csv\1.1\commons-csv-1.1.jar;C:\Users\babde\.m2\repository\ru\yandex\qatools\ashot\ashot\1.5.4\ashot-1.5.4.jar;C:\Users\babde\.m2\repository\com\google\code\gson\gson\2.6.2\gson-2.6.2.jar;C:\Users\babde\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\babde\.m2\repository\org\jasypt\jasypt\1.9.3\jasypt-1.9.3.jar;C:\Users\babde\.m2\repository\io\github\bonigarcia\webdrivermanager\5.1.1\webdrivermanager-5.1.1.jar;C:\Users\babde\.m2\repository\com\github\docker-java\docker-java\3.2.13\docker-java-3.2.13.jar;C:\Users\babde\.m2\repository\com\github\docker-java\docker-java-core\3.2.13\docker-java-core-3.2.13.jar;C:\Users\babde\.m2\repository\com\github\docker-java\docker-java-api\3.2.13\docker-java-api-3.2.13.jar;C:\Users\babde\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\Users\babde\.m2\repository\org\apache\commons\commons-compress\1.21\commons-compress-1.21.jar;C:\Users\babde\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\Users\babde\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\babde\.m2\repository\org\bouncycastle\bcpkix-jdk15on\1.64\bcpkix-jdk15on-1.64.jar;C:\Users\babde\.m2\repository\org\bouncycastle\bcprov-jdk15on\1.64\bcprov-jdk15on-1.64.jar;C:\Users\babde\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\babde\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.2.13\docker-java-transport-httpclient5-3.2.13.jar;C:\Users\babde\.m2\repository\com\github\docker-java\docker-java-transport\3.2.13\docker-java-transport-3.2.13.jar;C:\Users\babde\.m2\repository\net\java\dev\jna\jna\5.8.0\jna-5.8.0.jar;C:\Users\babde\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\babde\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar;C:\Users\babde\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.1.3\httpclient5-5.1.3.jar;C:\Users\babde\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.1.3\httpcore5-5.1.3.jar;C:\Users\babde\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.1.3\httpcore5-h2-5.1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\babde"/>
     <property name="user.language" value="fr"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2025-10-21"/>
-    <property name="java.home" value="C:\Program Files\Java\jdk-21"/>
+    <property name="java.version.date" value="2026-01-20"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-21.0.10"/>
     <property name="file.separator" value="\"/>
     <property name="basedir" value="C:\Users\babde\eclipse-workspace\Selenium_Cucumber"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\babde\AppData\Local\Temp\surefire12208867389469226931\surefirebooter-20260114164722758_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\babde\AppData\Local\Temp\surefire5812419860059802928\surefirebooter-20260202124300844_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="21.0.9+7-LTS-338"/>
+    <property name="java.runtime.version" value="21.0.10+8-LTS-217"/>
     <property name="user.name" value="babde"/>
     <property name="stdout.encoding" value="Cp1252"/>
     <property name="path.separator" value=";"/>
@@ -44,95 +44,78 @@
     <property name="localRepository" value="C:\Users\babde\.m2\repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\babde\AppData\Local\Temp\"/>
-    <property name="java.version" value="21.0.9"/>
+    <property name="java.version" value="21.0.10"/>
     <property name="user.dir" value="C:\Users\babde\eclipse-workspace\Selenium_Cucumber"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\babde\Desktop\Formation-Auto\apache-maven-3.9.12/bin;C:\Program Files\Java\jdk-21/bin;C:\Program Files\Java\jdk-21/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Java\jdk-21\bin;C:\Program Files\Microsoft SQL Server\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Users\babde\Desktop\Formation-Auto\apache-maven-3.9.12\bin;C:\Users\babde\AppData\Local\Microsoft\WindowsApps;C:\Users\babde\AppData\Roaming\npm;C:\Users\babde\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\babde\.dotnet\tools;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.10\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Users\babde\OneDrive\Desktop\Formation Automatisation\apache-maven-3.9.12/bin;C:\Program Files\Java\jdk-21.0.10/bin;C:\Program Files\Java\jdk-21.0.10/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Java\jdk-21.0.10\bin;C:\Program Files\Git\cmd;C:\Users\babde\AppData\Local\Microsoft\WindowsApps;;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="stderr.encoding" value="Cp1252"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="java.vm.version" value="21.0.9+7-LTS-338"/>
+    <property name="java.vm.version" value="21.0.10+8-LTS-217"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="Je Souhaite Tester La Page wishlists vide pour un utilisateur donné" classname="Je Souhaite Tester La Page wishlist de l&apos;application Web Demo Shop" time="14.681">
-    <error message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#newsletter\-result\-block&quot;}&#10;  (Session info: chrome=143.0.7499.193)&#10;For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception&#10;Build info: version: &apos;4.39.0&apos;, revision: &apos;126f156aee&apos;&#10;System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [9b097aaf4c94f9c36cabe0fdf12bbe81, findElement {value=newsletter-result-block, using=id}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.193, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\babde\AppData\Loca...}, fedcm:accounts: true, goog:processID: 17368, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 9b097aaf4c94f9c36cabe0fdf12bbe81" type="org.openqa.selenium.NoSuchElementException"><![CDATA[org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"css selector","selector":"#newsletter\-result\-block"}
-  (Session info: chrome=143.0.7499.193)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-Build info: version: '4.39.0', revision: '126f156aee'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [9b097aaf4c94f9c36cabe0fdf12bbe81, findElement {value=newsletter-result-block, using=id}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.193, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\babde\AppData\Loca...}, fedcm:accounts: true, goog:processID: 17368, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 9b097aaf4c94f9c36cabe0fdf12bbe81
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:561)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:67)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:384)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:378)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy24.getText(Unknown Source)
-	at com.e2eTest.automation.utils.Validations.assertEquals(Validations.java:55)
-	at com.e2eTest.automation.step_definitions.WishlistSteps.jeMeRedirigeVersLaPageWishlist(WishlistSteps.java:27)
-	at ✽.Je me redirige vers la page wishlist "The wishlist is empty!"(file:///C:/Users/babde/eclipse-workspace/Selenium_Cucumber/src/spec/features/wishlists/wishlists.feature:16)
-]]></error>
+  <testcase name="Je Souhaite Tester la Page Login avec Des Données Valides" classname="Je Souhaite Tester La Page Login de l&apos;application Web Demo Shop" time="9.67">
     <system-out><![CDATA[
-@wishlists @tr @wishlists
-Scenario: Je Souhaite Tester La Page wishlists vide pour un utilisateur donné # src/spec/features/wishlists/wishlists.feature:13
-  Given Je me connecte sur le site Web Demo Shop                              # com.e2eTest.automation.step_definitions.LoginSteps.jeMeConnecteSurLeSiteWebDemoShop()
-  When Je clique sur le bouton Log in                                         # com.e2eTest.automation.step_definitions.LoginSteps.jeCliqueSurLeBoutonLogIn()
-  And Je saisis une adresse mail                                              # com.e2eTest.automation.step_definitions.LoginSteps.jeSaisisUneAdresseMail()
-  And Je saisis un mot de passe                                               # com.e2eTest.automation.step_definitions.LoginSteps.jeSaisisUnMotDePasse()
-  And Je clique sur le bouton Login                                           # com.e2eTest.automation.step_definitions.LoginSteps.jeCliqueSurLeBoutonLogin()
-  And Je clique sur le bouton wishlist                                        # com.e2eTest.automation.step_definitions.WishlistSteps.jeCliqueSurLeBoutonWishlist()
-  Then Je me redirige vers la page wishlist "The wishlist is empty!"          # com.e2eTest.automation.step_definitions.WishlistSteps.jeMeRedirigeVersLaPageWishlist(java.lang.String)
-      org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#newsletter\-result\-block"}
-        (Session info: chrome=143.0.7499.193)
-      For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#nosuchelementexception
-      Build info: version: '4.39.0', revision: '126f156aee'
-      System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-      Driver info: org.openqa.selenium.chrome.ChromeDriver
-      Command: [9b097aaf4c94f9c36cabe0fdf12bbe81, findElement {value=newsletter-result-block, using=id}]
-      Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.193, chrome: {chromedriverVersion: 143.0.7499.192 (be2c1f4fd45..., userDataDir: C:\Users\babde\AppData\Loca...}, fedcm:accounts: true, goog:processID: 17368, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-      Session ID: 9b097aaf4c94f9c36cabe0fdf12bbe81
-      	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-      	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-      	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-      	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-      	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
-      	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-      	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-      	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-      	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-      	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:561)
-      	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:166)
-      	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:67)
-      	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:384)
-      	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:378)
-      	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-      	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-      	at jdk.proxy2/jdk.proxy2.$Proxy24.getText(Unknown Source)
-      	at com.e2eTest.automation.utils.Validations.assertEquals(Validations.java:55)
-      	at com.e2eTest.automation.step_definitions.WishlistSteps.jeMeRedirigeVersLaPageWishlist(WishlistSteps.java:27)
-      	at ✽.Je me redirige vers la page wishlist "The wishlist is empty!"(file:///C:/Users/babde/eclipse-workspace/Selenium_Cucumber/src/spec/features/wishlists/wishlists.feature:16)
-  And le message suivant doit apparaitre "The wishlist is empty!"             # com.e2eTest.automation.step_definitions.NewsLetterSteps.leMessageSuivantDoitApparaitre(java.lang.String)
-
-    Embedding Je Souhaite Tester La Page wishlists vide pour un utilisateur donné [image/png 54052 bytes]
-
+@login @tr @login_validCredentials
+Scenario: Je Souhaite Tester la Page Login avec Des Données Valides  # src/spec/features/login/01_login.feature:11
+  Given Je me connecte sur le site Web Demo Shop                     # com.e2eTest.automation.step_definitions.LoginSteps.jeMeConnecteSurLeSiteWebDemoShop()
+  When Je clique sur le bouton Log in                                # com.e2eTest.automation.step_definitions.LoginSteps.jeCliqueSurLeBoutonLogIn()
+  And Je saisis une adresse mail                                     # com.e2eTest.automation.step_definitions.LoginSteps.jeSaisisUneAdresseMail()
+  And Je saisis un mot de passe                                      # com.e2eTest.automation.step_definitions.LoginSteps.jeSaisisUnMotDePasse()
+  And Je clique sur le bouton Login                                  # com.e2eTest.automation.step_definitions.LoginSteps.jeCliqueSurLeBoutonLogin()
+  Then Je me redirige vers la page home "ichrafbenmohamed@gmail.com" # com.e2eTest.automation.step_definitions.LoginSteps.jeMeRedirigeVersLaPageHome(java.lang.String)
 ]]></system-out>
+    <system-err><![CDATA[févr. 02, 2026 12:43:06 P.M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 144, returning the closest version; found: 143; Please update to a Selenium version that supports CDP version 144
+]]></system-err>
+  </testcase>
+  <testcase name="Je Souhaite Tester la Page Login avec Des Données invalides #1" classname="Je Souhaite Tester La Page Login de l&apos;application Web Demo Shop" time="5.664">
+    <system-out><![CDATA[
+@login @tr @login_invalidCredentials
+Scenario Outline: Je Souhaite Tester la Page Login avec Des Données invalides                              # src/spec/features/login/01_login.feature:28
+  Given Je me connecte sur le site Web Demo Shop                                                           # com.e2eTest.automation.step_definitions.LoginSteps.jeMeConnecteSurLeSiteWebDemoShop()
+  When Je clique sur le bouton Log in                                                                      # com.e2eTest.automation.step_definitions.LoginSteps.jeCliqueSurLeBoutonLogIn()
+  And Je saisis une adresse mail "yasser.abc@gmail.com"                                                    # com.e2eTest.automation.step_definitions.LoginSteps.jeSaisisUneAdresseMail(java.lang.String)
+  And Je saisis un mot de passe "yasser123"                                                                # com.e2eTest.automation.step_definitions.LoginSteps.jeSaisisUnMotDePasse(java.lang.String)
+  And Je clique sur le bouton Login                                                                        # com.e2eTest.automation.step_definitions.LoginSteps.jeCliqueSurLeBoutonLogin()
+  Then Je visualise le message d'erreur "Login was unsuccessful. Please correct the errors and try again." # com.e2eTest.automation.step_definitions.LoginSteps.jeVisualiseLeMessageDErreur(java.lang.String)
+]]></system-out>
+    <system-err><![CDATA[févr. 02, 2026 12:43:13 P.M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 144, returning the closest version; found: 143; Please update to a Selenium version that supports CDP version 144
+]]></system-err>
+  </testcase>
+  <testcase name="Je Souhaite Tester la Page Login avec Des Données invalides #2" classname="Je Souhaite Tester La Page Login de l&apos;application Web Demo Shop" time="6.349">
+    <system-out><![CDATA[
+@login @tr @login_invalidCredentials
+Scenario Outline: Je Souhaite Tester la Page Login avec Des Données invalides                              # src/spec/features/login/01_login.feature:29
+  Given Je me connecte sur le site Web Demo Shop                                                           # com.e2eTest.automation.step_definitions.LoginSteps.jeMeConnecteSurLeSiteWebDemoShop()
+  When Je clique sur le bouton Log in                                                                      # com.e2eTest.automation.step_definitions.LoginSteps.jeCliqueSurLeBoutonLogIn()
+  And Je saisis une adresse mail "rami.abc@gmail.com"                                                      # com.e2eTest.automation.step_definitions.LoginSteps.jeSaisisUneAdresseMail(java.lang.String)
+  And Je saisis un mot de passe "rami123"                                                                  # com.e2eTest.automation.step_definitions.LoginSteps.jeSaisisUnMotDePasse(java.lang.String)
+  And Je clique sur le bouton Login                                                                        # com.e2eTest.automation.step_definitions.LoginSteps.jeCliqueSurLeBoutonLogin()
+  Then Je visualise le message d'erreur "Login was unsuccessful. Please correct the errors and try again." # com.e2eTest.automation.step_definitions.LoginSteps.jeVisualiseLeMessageDErreur(java.lang.String)
+]]></system-out>
+    <system-err><![CDATA[févr. 02, 2026 12:43:19 P.M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 144, returning the closest version; found: 143; Please update to a Selenium version that supports CDP version 144
+]]></system-err>
+  </testcase>
+  <testcase name="Je Souhaite Tester la Page Login avec Des Données invalides #3" classname="Je Souhaite Tester La Page Login de l&apos;application Web Demo Shop" time="5.159">
+    <system-out><![CDATA[
+@login @tr @login_invalidCredentials
+Scenario Outline: Je Souhaite Tester la Page Login avec Des Données invalides                              # src/spec/features/login/01_login.feature:30
+  Given Je me connecte sur le site Web Demo Shop                                                           # com.e2eTest.automation.step_definitions.LoginSteps.jeMeConnecteSurLeSiteWebDemoShop()
+  When Je clique sur le bouton Log in                                                                      # com.e2eTest.automation.step_definitions.LoginSteps.jeCliqueSurLeBoutonLogIn()
+  And Je saisis une adresse mail "kawther.abc@gmail.com"                                                   # com.e2eTest.automation.step_definitions.LoginSteps.jeSaisisUneAdresseMail(java.lang.String)
+  And Je saisis un mot de passe "kawther123"                                                               # com.e2eTest.automation.step_definitions.LoginSteps.jeSaisisUnMotDePasse(java.lang.String)
+  And Je clique sur le bouton Login                                                                        # com.e2eTest.automation.step_definitions.LoginSteps.jeCliqueSurLeBoutonLogin()
+  Then Je visualise le message d'erreur "Login was unsuccessful. Please correct the errors and try again." # com.e2eTest.automation.step_definitions.LoginSteps.jeVisualiseLeMessageDErreur(java.lang.String)
+]]></system-out>
+    <system-err><![CDATA[févr. 02, 2026 12:43:25 P.M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 144, returning the closest version; found: 143; Please update to a Selenium version that supports CDP version 144
+]]></system-err>
   </testcase>
 </testsuite>

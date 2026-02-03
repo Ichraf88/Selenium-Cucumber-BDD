@@ -26,20 +26,20 @@ public class BooksPage extends BasePage{
 	@FindBy(how = How.XPATH, using = "//p[@class='content']")
 	private static WebElement validationMsg;
 
-	@FindBy(how = How.CSS, using = "a[class='ico-cart'] span[class='cart-label']")
+	@FindBy(how = How.XPATH, using = "//span[normalize-space()='Shopping cart']")
 	private static WebElement voirCart;
 
 	@FindBy(how = How.CSS, using = "input[value='6234744']")
 	private static WebElement checkBoxAchat;
 
 	@FindBy(how = How.ID, using = "CountryId")
-	private static WebElement country;
+	private static String country;
 
 	@FindBy(how = How.ID, using = "StateProvinceId")
 	private static WebElement province;
 
-	@FindBy(how = How.ID, using = "checkout")
-	private static WebElement checkout;
+	@FindBy(how = How.CSS, using = ".checkout-buttons")
+	private static WebElement checkoutButton;
 
 	@FindBy(how = How.ID, using = "termsofservice")
 	private static WebElement termsOfService;
@@ -56,7 +56,13 @@ public class BooksPage extends BasePage{
 	@FindBy(how = How.CSS, using = "li[id='opc-payment_method'] h2")
 	private static WebElement paiementMethod;
 
+	
+	@FindBy(how = How.CSS, using = "div[id='terms-of-service-warning-box'] p")
+	private static WebElement alertText;
 
+	@FindBy(how =How.CSS, using = ".ui-button-icon-primary.ui-icon.ui-icon-closethick")
+	private static WebElement fermerAlert;
+	
 	public BooksPage() {
 		super(Setup.getDriver());
 	}
@@ -87,9 +93,12 @@ public class BooksPage extends BasePage{
 	public static WebElement getCheckBoxAchat() {
 		return checkBoxAchat;
 	}
-
-
-	public static WebElement getCountry() {
+	
+	public static WebElement getcheckoutButton() {
+		return checkoutButton;
+	}
+	
+	public String getCountry() {
 		return country;
 	}
 
@@ -98,7 +107,7 @@ public class BooksPage extends BasePage{
 	}
 
 	public static WebElement getCheckout() {
-		return checkout;
+		return checkoutButton;
 	}
 
 	public static WebElement getTermsOfService() {
@@ -121,4 +130,11 @@ public class BooksPage extends BasePage{
 		return paiementMethod;
 	}
 	
+	public static WebElement getAlertText1() {
+		return alertText;
+	}
+	
+	public static WebElement getfermerAlert() {
+		return fermerAlert;
+	}
 }

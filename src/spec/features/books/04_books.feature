@@ -9,20 +9,27 @@ And  Je saisis une adresse mail
 And Je saisis un mot de passe
 And Je clique sur le bouton Login
 
-@books_validScenario
-Scenario: Je Souhaite Tester l'achat d'un book pour un utilisateur donné 
+@books
+Scenario: Je Souhaite Tester l'achat d'un book
+
 And Je click sur Books
-And Je choisi le livre souhaité
-And Je clique sur Add to cart
+And Je clique sur le livre souhaité
+Then les details sur livre apparaissent price "10.00"
+When Je clique sur Add to car
 Then  le message de validation apparait Validation message "The product has been added to your shopping cart"
-And Je clique ShoppingCarte 
-And Je selectionne le paye "Canada"
-And je selectionne la province "Quebec"
-And Je coche "I agree with the terms of service and I adhere to them unconditionally"
-And Je selectionne mon adresse
-And Je coche "In store Pick up"
+When  Je clique ShoppingCarte 
+And Je clique sur checkout
+Then une alerte avec l'apparition du message MSG "Please accept the terms of service before the next step."
+When j'accpete l'alerte
+And Je coche accpter les condition
+And Je clique sur checkout
+And Je choisi l'adresse
 And Je clique sur continue
-Then La page du paiement apparait Paiement "Payment method"
+And Je choisie la methode de livraison
+And Je clique sur conditue
+And Je coche cash on delivery
+Then le message de validation ValidationFinal "You will pay by COD"
+
 
 
 
