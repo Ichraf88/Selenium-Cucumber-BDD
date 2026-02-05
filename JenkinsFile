@@ -1,31 +1,34 @@
 pipeline {
   agent any
 
-  tools {
+   tools {
     jdk   'JAVA_HOME'     // ex: 'JDK21' dans mon cas JDK21.0.10
     maven 'MAVEN_HOME'    // ex: 'Maven3'
   }
 
-  options {
-    timestamps()
-    disableConcurrentBuilds()
-    timeout(time: 45, unit: 'MINUTES')
-    buildDiscarder(logRotator(numToKeepStr: '30', artifactNumToKeepStr: '15'))
-    skipDefaultCheckout(true)
-  }
-
-  parameters {
-    choice(name: 'BROWSER', choices: ['chrome', 'edge'], description: 'Navigateur Selenium')
-    booleanParam(name: 'HEADLESS', defaultValue: true, description: 'Headless (recommandé sur Jenkins)')
-    string(name: 'CUCUMBER_TAGS', defaultValue: '', description: 'Ex: @smoke and not @wip (vide = tous)')
-    booleanParam(name: 'RUN_E2E', defaultValue: true, description: 'Exécuter les scénarios Cucumber/Selenium')
-  }
 
   environment {
-    MVN = 'mvn -B -ntp -U -e'  // -B batch, -ntp no transfer progress
+    BROWSER  = 'chrome'
+    HEADLESS = 'true'
+    TAGS     = ''   // ex: '@login' si tu veux filtrer
   }
 
   stages {
+    stage('Checkout') {
+      steps {
+        checkout scm
+      }
+    }
+
+    stage('Build') {
+      steps {
+        bat 'java -version'
+        bat 'mvn -version'
+        bat 'mvn -B -ntp clean package -DskipTests'
+      }
+    }
+
+    stages {
 
     stage('Init') {
       steps {
