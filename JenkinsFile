@@ -1,35 +1,20 @@
 pipeline {
   agent any
 
-   tools {
-    jdk   'JAVA_HOME'     // ex: 'JDK21' dans mon cas JDK21.0.10
-    maven 'MAVEN_HOME'    // ex: 'Maven3'
+  tools {
+    // Mets ici les NOMS EXACTS de tes outils dans: Manage Jenkins > Tools
+    jdk   'JDK21'
+    maven 'Maven3'
   }
 
-
-  environment {
-    BROWSER  = 'chrome'
-    HEADLESS = 'true'
-    TAGS     = ''   // ex: '@login' si tu veux filtrer
+  parameters {
+    choice(name: 'BROWSER', choices: ['chrome', 'edge'], description: 'Navigateur')
+    booleanParam(name: 'HEADLESS', defaultValue: true, description: 'Mode headless')
+    string(name: 'CUCUMBER_TAGS', defaultValue: '', description: 'Ex: @login (vide = tout)')
+    booleanParam(name: 'RUN_E2E', defaultValue: true, description: 'Lancer les tests E2E')
   }
 
   stages {
-    stage('Checkout') {
-      steps {
-        checkout scm
-      }
-    }
-
-    stage('Build') {
-      steps {
-        bat 'java -version'
-        bat 'mvn -version'
-        bat 'mvn -B -ntp clean package -DskipTests'
-      }
-    }
-
-    stages {
-
     stage('Init') {
       steps {
         bat 'java -version'
@@ -46,17 +31,15 @@ pipeline {
 
     stage('Build (compile/package)') {
       steps {
-        // build sans tests = rapide + détecte erreurs de compilation tôt
-        bat "%MVN% -DskipTests clean package"
+        bat 'mvn -B -ntp -DskipTests clean package'
       }
     }
 
-    stage('Unit Tests (si tu en as)') {
+    stage('Unit Tests') {
       steps {
-        // Si tu as des tests unitaires séparés : garde ce stage.
-        // Sinon tu peux le supprimer.
+        // Si tu n'as pas de tests unitaires, tu peux supprimer ce stage.
         catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
-          bat "%MVN% test"
+          bat 'mvn -B -ntp test'
         }
       }
     }
@@ -64,10 +47,9 @@ pipeline {
     stage('E2E Tests (Cucumber/Selenium)') {
       when { expression { return params.RUN_E2E } }
       steps {
-        // catchError pour continuer et publier les rapports même si des scénarios échouent
         catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
           bat """
-            %MVN% test ^
+            mvn -B -ntp test ^
               -Dbrowser=${params.BROWSER} ^
               -Dheadless=${params.HEADLESS} ^
               -Dcucumber.filter.tags="${params.CUCUMBER_TAGS}"
@@ -76,43 +58,13 @@ pipeline {
       }
     }
 
-    stage('Publish Reports') {
+    stage('Publish / Archive') {
       steps {
-        // JUnit (Surefire + Failsafe si tu ajoutes IT plus tard)
-        junit testResults: 'target/surefire-reports/*.xml, target/failsafe-reports/*.xml',
+        junit testResults: '**/target/surefire-reports/*.xml, **/target/failsafe-reports/*.xml',
               allowEmptyResults: true
 
-        // Cucumber HTML (sans casser le build si absent)
-        script {
-          def reportFile = 'target/report/cucumber-report.html'
-          if (fileExists(reportFile)) {
-            publishHTML(target: [
-              reportDir: 'target/report',
-              reportFiles: 'cucumber-report.html',
-              reportName: 'Cucumber Report',
-              keepAll: true,
-              alwaysLinkToLastBuild: true,
-              allowMissing: false
-            ])
-          } else {
-            echo "Rapport Cucumber introuvable: ${reportFile}"
-          }
-        }
-      }
-    }
-
-    stage('Archive Artifacts') {
-      steps {
         archiveArtifacts artifacts: 'target/report/**, target/screenshots/**, screenshots/**, logs/**',
                          allowEmptyArchive: true
-      }
-    }
-
-    stage('Cleanup') {
-      steps {
-        // Nettoyage workspace (safe)
-        // deleteDir() supprime le workspace du job
-        deleteDir()
       }
     }
   }
